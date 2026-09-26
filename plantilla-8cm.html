@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Plantilla Cub AR — Cervell humà (8 cm)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4 landscape; margin: 5mm; }
+    * { box-sizing: border-box; }
+    body { font-family: 'Source Sans 3', Arial, sans-serif; margin: 0; color: #1a1a1a; }
+    .instruccions h1, .cara .nom, .titol .gran { font-family: 'Montserrat', Arial, sans-serif; }
+    .titol .gran { font-weight: 800; letter-spacing: .3px; }
+
+    .instruccions { font-size: 10.5px; margin: 0; }
+    .instruccions h1 { font-size: 15px; margin: 0 0 2mm; }
+    .instruccions .credit { font-size: 8.5px; color: #555; margin-top: 1mm; }
+    @media print { .no-imprimir { display: none; } }
+    .pagina { page-break-after: always; }
+
+    .part1 {
+      display: grid;
+      grid-template-columns: repeat(3, 80mm);
+      grid-template-rows: repeat(2, 80mm);
+      margin: 13mm auto 0;
+      width: 240mm;
+    }
+    .part2 {
+      display: grid;
+      grid-template-columns: 80mm;
+      grid-template-rows: repeat(2, 80mm);
+      margin: 16mm auto 0;
+      width: 80mm;
+    }
+    .cara {
+      border: 0.4mm solid #000;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+    .cara img { width: 56mm; height: 56mm; image-rendering: pixelated; }
+    .cara img.qr { image-rendering: auto; }
+    .cara .nom {
+      font-size: 12px; font-weight: bold; margin-top: 2mm;
+      text-transform: uppercase; letter-spacing: .5px; text-align: center; line-height: 1.25;
+    }
+    .cara .nom small { display: block; font-family: 'Source Sans 3', Arial, sans-serif;
+      text-transform: none; letter-spacing: 0; font-weight: 600; font-size: 10.5px; color: #2f4a8a; }
+    .titol { text-align: center; padding: 4mm; }
+    .titol .gran { font-size: 24px; line-height: 1.2; color: #2f4a8a; }
+    .titol .petit { font-size: 13px; margin-top: 3mm; }
+    .titol .nota { font-size: 10px; margin-top: 3mm; color: #555; line-height: 1.3; }
+
+    .dalt    { grid-column: 2; grid-row: 1; }
+    .esq     { grid-column: 1; grid-row: 2; }
+    .davant  { grid-column: 2; grid-row: 2; }
+    .dreta   { grid-column: 3; grid-row: 2; }
+    .baix    { grid-column: 1; grid-row: 1; }
+    .darrere { grid-column: 1; grid-row: 2; }
+
+    .p { position: absolute; background: #eee; border: 0.3mm dashed #888; }
+    .p-dalt  { left: 8mm; right: 8mm; top: -12mm; height: 12mm;
+               clip-path: polygon(0 100%, 12% 0, 88% 0, 100% 100%); }
+    .p-baix  { left: 8mm; right: 8mm; bottom: -12mm; height: 12mm;
+               clip-path: polygon(0 0, 12% 100%, 88% 100%, 100% 0); }
+    .p-esq   { top: 8mm; bottom: 8mm; left: -12mm; width: 12mm;
+               clip-path: polygon(100% 0, 0 12%, 0 88%, 100% 100%); }
+    .p-dreta { top: 8mm; bottom: 8mm; right: -12mm; width: 12mm;
+               clip-path: polygon(0 0, 100% 12%, 100% 88%, 0 100%); }
+    .p-unio {
+      background: repeating-linear-gradient(45deg, #ddd 0, #ddd 2mm, #fff 2mm, #fff 4mm);
+    }
+    .p-unio::after {
+      content: "UNIÓ"; position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; font-weight: bold; color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="pagina">
+    <div class="instruccions">
+      <h1>Cub AR — Cervell humà (versió 8 cm) &nbsp;·&nbsp; Pàgina 1 de 2</h1>
+      <b>Muntatge:</b> 1) Imprimiu les 2 pàgines a mida real (100 %). 2) Retalleu les dues peces amb les pestanyes.
+      3) Enganxeu la pestanya ratllada <b>UNIÓ</b> de la pàgina 2 per sota de la vora inferior de la cara
+      CERVELL SENCER. 4) Doblegueu per totes les línies i enganxeu la resta de pestanyes per dins.
+      <span class="no-imprimir"><b>(Ctrl+P → Desa com a PDF, paper A4 horitzontal.)</b></span>
+    </div>
+    <div class="part1">
+      <div class="cara dalt">
+        <img class="qr" src="qr-visor.png" alt="QR del visor AR">
+        <div class="nom">Escaneja'm → visor AR</div>
+        <div class="p p-dalt"></div>
+      </div>
+
+      <div class="cara esq">
+        <img src="marcadores/marker-3.png" alt="Marcador 3">
+        <div class="nom">Vista medial<small>cos callós, tàlem i gir cingulat</small></div>
+        <div class="p p-dalt"></div>
+        <div class="p p-esq"></div>
+        <div class="p p-baix"></div>
+      </div>
+
+      <div class="cara davant">
+        <img src="marcadores/marker-0.png" alt="Marcador 0">
+        <div class="nom">Cervell sencer<small>els lòbuls cerebrals</small></div>
+      </div>
+
+      <div class="cara dreta">
+        <img src="marcadores/marker-1.png" alt="Marcador 1">
+        <div class="nom">Lòbuls separats<small>vista explosionada animada</small></div>
+        <div class="p p-dalt"></div>
+        <div class="p p-dreta"></div>
+        <div class="p p-baix"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagina">
+    <div class="instruccions">
+      <h1>Cub AR — Cervell humà (versió 8 cm) &nbsp;·&nbsp; Pàgina 2 de 2</h1>
+      La pestanya ratllada <b>UNIÓ</b> s'enganxa sota la cara CERVELL SENCER de la pàgina 1.
+      <div class="credit">Model 3D: Kristen Browne; Heidi Schlehlein. 2023. 3D Reference Organ for Brain, Male v1.3 .
+        https://doi.org/10.48539/HBM929.XKCL.339 — Human Reference Atlas, llicència CC BY 4.0 (adaptat).</div>
+    </div>
+    <div class="part2">
+      <div class="cara baix titol">
+        <div class="gran">CUB AR<br>CERVELL HUMÀ</div>
+        <div class="petit">Parts de l'encèfal<br>i lòbuls cerebrals</div>
+        <div class="nota">4 vistes en 3D · marcadors barcode 3×3 núm. 0, 1, 2 i 3</div>
+        <div class="p p-dalt p-unio"></div>
+      </div>
+
+      <div class="cara darrere">
+        <img src="marcadores/marker-2.png" alt="Marcador 2">
+        <div class="nom">Cerebel i tronc<small>mesencèfal, protuberància i bulb</small></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
